@@ -1,13 +1,13 @@
-makeCacheMatrix <- function(x=numeric(),n=numeric()) 
+makeCacheMatrix <- function(x=matrix()) 
 {  
-  ##Creates Matrix x
-  x <- matrix(x,n)
+  ##Set Inverse to Null
   inverse <- NULL
   
   ##Overrides Matrix x
   set <- function(y)
   {
     x <<- y
+    inverse <<-NULL
   }
   
   ##Retrieves Matrix x
@@ -19,7 +19,7 @@ makeCacheMatrix <- function(x=numeric(),n=numeric())
   ##Stores Matrix Inverse into Variable Inverse
   setInverse <- function(z)
   {
-    inverse <<- solve(z)
+    inverse <<- z
   }
   
   ##Returns the inverse

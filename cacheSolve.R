@@ -1,4 +1,4 @@
-cacheSolve <- function(x)
+cacheSolve <- function(x, ...)
 {
   ##Calls getInverse from makeCacheMatrix and stores inverse in m
   m <- x$getInverse()
@@ -12,7 +12,7 @@ cacheSolve <- function(x)
 
   ##Else, it solves and caches the inverse
   temp <- x$get()
-  m <- solve(temp)
+  m <- solve(temp, ...)
   x$setInverse(m)
   
   ##Return m
